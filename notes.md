@@ -30,6 +30,24 @@ data
 - Para un proyecto pueden haber varios pipelines cada uno con muchos nodos.
 - Se puede empaquetar para compartir el pipeline y la documentación pero sin los datos y las configuraciones.
 - Se puede reproducir la historia del pipeline mediante los journals.
+- Es extensible mediante hook, ejemplo:
+    - Trackear métricas de ML utilizando MLFLow.
+    - Validar datos antes que los nodos sean ejecutados con Great-Expectations.
+- Tipos de Hooks
+    - `after_catalog_created`
+    - `before_node_run`
+    - `after_node_run`
+    - `on_node_error`
+    - `before_pipeline_run`
+    - `after_pipeline_run`
+    - `on_pipeline_error`
 
 ## Questions
 - ¿Puedo utilizar kedro en el pipeline de entrenamiento y servirlo como API utilizando OTRO pipeline fuera de kedro?
+
+## Reading
+- [Cuándo se podría deployar en kubeflow?](https://github.com/quantumblacklabs/kedro/issues/353).
+- [Intro a kedro](https://medium.com/quantumblack/introducing-kedro-the-open-source-library-for-production-ready-machine-learning-code-d1c6d26ce2cf).
+- [documentación oficial de Kedro](https://kedro.readthedocs.io/en/stable/).
+- [Extender Kedro](https://medium.com/quantumblack/deploying-and-versioning-data-pipelines-at-scale-942b1d81b5f5).
+- [Kedro Workflow](https://towardsdatascience.com/kedro-prepare-to-pimp-your-pipeline-f8f68c263466).
